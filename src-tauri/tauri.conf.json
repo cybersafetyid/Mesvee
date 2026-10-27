@@ -96,7 +96,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDI2MUU2OEI3Qjg0MTY5NEUKUldST2FVRzR0MmdlSnBRT2ptT05ncGpRRXA3NnFtZmN0ajdtOTdGOWpEQVFqRnhSTGdYWnNhM0gK",
       "endpoints": [
-        "https://github.com/mesvee-app/mesvee/releases/latest/download/latest.json"
+        "https://github.com/cybersafetyid/Mesvee/releases/latest/download/latest.json"
       ]
     }
   }

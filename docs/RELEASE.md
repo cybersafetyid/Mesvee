@@ -118,7 +118,7 @@ machine that compiled it.
 The updater polls the endpoint configured in `tauri.conf.json`:
 
 ```
-https://github.com/mesvee-app/mesvee/releases/latest/download/latest.json
+https://github.com/cybersafetyid/Mesvee/releases/latest/download/latest.json
 ```
 
 Releases are automated by [`.github/workflows/release.yml`](../.github/workflows/release.yml):
@@ -161,15 +161,15 @@ hand-written `latest.json` to a release.
   "platforms": {
     "darwin-aarch64": {
       "signature": "<contents of Mesvee.app.tar.gz.sig>",
-      "url": "https://github.com/mesvee-app/mesvee/releases/download/v0.2.0/Mesvee_0.2.0_aarch64.app.tar.gz"
+      "url": "https://github.com/cybersafetyid/Mesvee/releases/download/v0.2.0/Mesvee_0.2.0_aarch64.app.tar.gz"
     },
     "windows-x86_64": {
       "signature": "<contents of Mesvee_0.2.0_x64-setup.exe.sig>",
-      "url": "https://github.com/mesvee-app/mesvee/releases/download/v0.2.0/Mesvee_0.2.0_x64-setup.exe"
+      "url": "https://github.com/cybersafetyid/Mesvee/releases/download/v0.2.0/Mesvee_0.2.0_x64-setup.exe"
     },
     "linux-x86_64": {
       "signature": "<contents of Mesvee_0.2.0_amd64.AppImage.sig>",
-      "url": "https://github.com/mesvee-app/mesvee/releases/download/v0.2.0/Mesvee_0.2.0_amd64.AppImage"
+      "url": "https://github.com/cybersafetyid/Mesvee/releases/download/v0.2.0/Mesvee_0.2.0_amd64.AppImage"
     }
   }
 }

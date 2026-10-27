@@ -6,7 +6,7 @@ name: Release
 # Release whose notes come from CHANGELOG.md, then publishes it.
 #
 # The updater endpoint in src-tauri/tauri.conf.json is
-#   https://github.com/mesvee-app/mesvee/releases/latest/download/latest.json
+#   https://github.com/cybersafetyid/Mesvee/releases/latest/download/latest.json
 # so the release is created as a draft and only published after every platform
 # uploaded successfully: users never see a half-built update.
 on:

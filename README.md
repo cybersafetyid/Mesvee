@@ -137,7 +137,7 @@ Mesvee is a cross-platform desktop client that unifies messaging and social netw
 ### Run
 
 ```bash
-git clone <repo-url> Mesvee && cd Mesvee
+git clone https://github.com/cybersafetyid/Mesvee.git && cd Mesvee
 pnpm install            # JS dependencies (lockfile is authoritative)
 
 pnpm run dev            # Vite + `tauri dev` — full native app
