@@ -1,7 +1,7 @@
 {
   "name": "mesvee",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mesvee — satu jendela untuk semua pesan dan media sosial Anda.",
   "type": "module",
   "license": "GPL-3.0-only",

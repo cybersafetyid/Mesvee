@@ -1,6 +1,6 @@
 [package]
 name = "mesvee"
-version = "0.1.0"
+version = "0.1.1"
 description = "Mesvee — one window for every conversation."
 authors = ["Mesvee"]
 license = "GPL-3.0-only"
