@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-service-muted"
+description = "Enables the set_service_muted command without any pre-configured scope."
+commands.allow = ["set_service_muted"]
+
+[[permission]]
+identifier = "deny-set-service-muted"
+description = "Denies the set_service_muted command without any pre-configured scope."
+commands.deny = ["set_service_muted"]

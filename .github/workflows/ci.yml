@@ -1,0 +1,59 @@
+name: CI
+
+# Quality gate: the same `pnpm run check` a developer runs locally, plus the
+# Playwright suite against the browser shell. Bundle building and publishing
+# happen per-platform in the release workflow, not here.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  quality:
+    name: typecheck · tests · e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      # Version comes from the `packageManager` field in package.json.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      # Tauri compiles against the system webview; the Rust suite needs it too.
+      - name: Install Linux webview dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev libayatana-appindicator3-dev \
+            librsvg2-dev libssl-dev libxdo-dev build-essential curl wget file
+
+      - name: Install JS dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Static checks and unit tests
+        run: pnpm run check
+
+      - name: Install Playwright browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: End-to-end suite
+        run: pnpm run test:e2e
+
+      - name: Upload Playwright artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: test-results/
+          retention-days: 7

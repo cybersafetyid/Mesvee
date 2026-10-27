@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-service-navigate"
+description = "Enables the service_navigate command without any pre-configured scope."
+commands.allow = ["service_navigate"]
+
+[[permission]]
+identifier = "deny-service-navigate"
+description = "Denies the service_navigate command without any pre-configured scope."
+commands.deny = ["service_navigate"]

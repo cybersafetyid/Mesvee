@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-reset-pin-with-recovery"
+description = "Enables the reset_pin_with_recovery command without any pre-configured scope."
+commands.allow = ["reset_pin_with_recovery"]
+
+[[permission]]
+identifier = "deny-reset-pin-with-recovery"
+description = "Denies the reset_pin_with_recovery command without any pre-configured scope."
+commands.deny = ["reset_pin_with_recovery"]

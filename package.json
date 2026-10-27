@@ -1,0 +1,62 @@
+{
+  "name": "mesvee",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mesvee — satu jendela untuk semua pesan dan media sosial Anda.",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "author": "Mesvee",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "tauri dev",
+    "dev:web": "vite --port 1420 --strictPort",
+    "build": "tauri build",
+    "build:web": "pnpm run typecheck && vite build",
+    "preview:web": "vite preview --port 1421 --strictPort",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:rust": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:e2e": "playwright test",
+    "check": "pnpm run typecheck && pnpm run test && pnpm run test:rust",
+    "icons": "node scripts/generate-icons.mjs",
+    "bump:patch": "node scripts/bump-version.mjs patch",
+    "bump:minor": "node scripts/bump-version.mjs minor",
+    "bump:major": "node scripts/bump-version.mjs major",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/vite": "4.3.3",
+    "@tauri-apps/cli": "2.12.4",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "clsx": "2.1.1",
+    "esbuild": "^0.27.7",
+    "i18next": "26.5.10",
+    "lucide-react": "1.61.0",
+    "motion": "14.6.0",
+    "png-to-ico": "3.0.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-i18next": "17.1.8",
+    "semver": "7.7.3",
+    "sharp": "0.35.5",
+    "simple-icons": "16.35.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5",
+    "zustand": "5.0.16"
+  },
+  "packageManager": "pnpm@12.9.1"
+}

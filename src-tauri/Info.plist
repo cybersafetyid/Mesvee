@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSCameraUsageDescription</key>
+  <string>Mesvee memerlukan kamera hanya saat Anda memulai panggilan video di layanan yang Anda tambahkan.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Mesvee memerlukan mikrofon hanya saat Anda memulai panggilan suara atau video di layanan yang Anda tambahkan.</string>
+  <key>NSHumanReadableCopyright</key>
+  <string>© 2026 Mesvee. All rights reserved.</string>
+</dict>
+</plist>

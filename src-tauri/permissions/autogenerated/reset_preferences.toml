@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-reset-preferences"
+description = "Enables the reset_preferences command without any pre-configured scope."
+commands.allow = ["reset_preferences"]
+
+[[permission]]
+identifier = "deny-reset-preferences"
+description = "Denies the reset_preferences command without any pre-configured scope."
+commands.deny = ["reset_preferences"]

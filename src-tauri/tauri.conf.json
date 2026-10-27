@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Mesvee",
+  "version": "0.1.0",
+  "identifier": "app.mesvee.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm run dev:web",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "pnpm run build:web",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Mesvee",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 1040,
+        "minHeight": 680,
+        "center": true,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "trafficLightPosition": {
+          "x": 18,
+          "y": 24
+        },
+        "transparent": false,
+        "shadow": true,
+        "visible": false,
+        "focus": false,
+        "dragDropEnabled": false,
+        "backgroundColor": "#08080a"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' asset: data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src ipc: http://ipc.localhost",
+      "devCsp": "default-src 'self' http://127.0.0.1:1420; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' http://127.0.0.1:1420; connect-src ipc: http://ipc.localhost ws://127.0.0.1:1420 http://127.0.0.1:1420"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "publisher": "Mesvee",
+    "copyright": "© 2026 Mesvee. All rights reserved.",
+    "category": "SocialNetworking",
+    "shortDescription": "All your messages and social feeds in one window.",
+    "longDescription": "Mesvee brings WhatsApp, Telegram, Instagram, X, Discord and more into one secure, beautifully focused desktop window.",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "hardenedRuntime": true,
+      "entitlements": "Entitlements.plist",
+      "dmg": {
+        "appPosition": {
+          "x": 180,
+          "y": 220
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 220
+        },
+        "windowSize": {
+          "width": 660,
+          "height": 440
+        }
+      }
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": true
+      }
+    },
+    "linux": {
+      "deb": {
+        "depends": [
+          "libwebkit2gtk-4.1-0",
+          "libayatana-appindicator3-1"
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDI2MUU2OEI3Qjg0MTY5NEUKUldST2FVRzR0MmdlSnBRT2ptT05ncGpRRXA3NnFtZmN0ajdtOTdGOWpEQVFqRnhSTGdYWnNhM0gK",
+      "endpoints": [
+        "https://github.com/mesvee-app/mesvee/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}

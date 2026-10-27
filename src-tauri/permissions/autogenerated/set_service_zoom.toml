@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-service-zoom"
+description = "Enables the set_service_zoom command without any pre-configured scope."
+commands.allow = ["set_service_zoom"]
+
+[[permission]]
+identifier = "deny-set-service-zoom"
+description = "Denies the set_service_zoom command without any pre-configured scope."
+commands.deny = ["set_service_zoom"]

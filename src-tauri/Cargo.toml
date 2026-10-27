@@ -1,0 +1,54 @@
+[package]
+name = "mesvee"
+version = "0.1.0"
+description = "Mesvee — one window for every conversation."
+authors = ["Mesvee"]
+license = "GPL-3.0-only"
+edition = "2024"
+rust-version = "1.90"
+
+[lib]
+name = "mesvee_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+anyhow = "1"
+argon2 = "0.5"
+chrono = { version = "0.4", features = ["serde"] }
+keyring = "4"
+parking_lot = "0.12"
+rand_core = { version = "0.6", features = ["getrandom"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2.12", features = ["unstable", "tray-icon", "image-png"] }
+tauri-plugin-autostart = "2.7"
+tauri-plugin-notification = "2.7"
+tauri-plugin-opener = "2.7"
+tauri-plugin-single-instance = "2.5"
+tauri-plugin-updater = "2.14"
+tauri-plugin-window-state = "2.5"
+thiserror = "2"
+tracing = "0.1"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+url = "2"
+user-idle = "0.6"
+uuid = { version = "1", features = ["v4", "serde"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+# Needed to give the child webview the card's corner radius; already in the tree
+# through tao/wry, so this pins the same major version rather than adding code.
+objc2 = "0.6"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
