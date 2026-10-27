@@ -1,2 +1,4 @@
+# Build scripts pnpm may run. esbuild downloads its platform binary in postinstall;
+# pnpm 10+ fails `install --frozen-lockfile` (ERR_PNPM_IGNORED_BUILDS) unless this is explicit.
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: true
