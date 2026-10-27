@@ -3,10 +3,21 @@ name: CI
 # Quality gate: the same `pnpm run check` a developer runs locally, plus the
 # Playwright suite against the browser shell. Bundle building and publishing
 # happen per-platform in the release workflow, not here.
+#
+# Minutes are saved three ways: it runs on pull requests only (and manually),
+# skips docs/asset-only changes, and cancels a superseded run on the same ref.
 on:
-  push:
-    branches: [main]
   pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'screenshots/**'
+      - 'LICENSE'
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   quality:
