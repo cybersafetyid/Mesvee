@@ -122,7 +122,7 @@ export function App() {
         <Rail />
         <main className="relative min-w-0 flex-1 overflow-hidden">
           <div key={route} className="enter-fade h-full">
-            {route === 'home' && <HomeScreen onOpenPalette={() => setPaletteOpen(true)} />}
+            {route === 'home' && <HomeScreen />}
             {route === 'service' && <ServiceScreen />}
             {route === 'settings' && <SettingsScreen />}
           </div>

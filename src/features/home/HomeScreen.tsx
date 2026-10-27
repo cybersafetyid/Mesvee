@@ -4,7 +4,6 @@ import {
   Bell,
   BellRing,
   CloudDownload,
-  Command,
   LockKeyhole,
   Plus,
   ShieldCheck,
@@ -14,15 +13,9 @@ import {
 import { useAppStore } from '../../core/store';
 import { Button } from '../../ui/Button';
 import { Switch } from '../../ui/Controls';
-import { Kbd } from '../../ui/Form';
 import { Logo } from '../../ui/Logo';
 import { ServiceIcon } from '../../ui/ServiceIcon';
 import { cn } from '../../lib/cn';
-
-/** Props for the home dashboard. */
-export interface HomeScreenProps {
-  onOpenPalette: () => void;
-}
 
 /** Returns the localized greeting for the current part of the day. */
 function greetingKey(): 'home.greetingMorning' | 'home.greetingAfternoon' | 'home.greetingEvening' {
@@ -38,7 +31,7 @@ function greetingKey(): 'home.greetingMorning' | 'home.greetingAfternoon' | 'hom
  * Active services take main stage on the left, with the Orbit visual and quiet
  * controls stacked on the right.
  */
-export function HomeScreen({ onOpenPalette }: HomeScreenProps) {
+export function HomeScreen() {
   const { t } = useTranslation();
   const settings = useAppStore((state) => state.settings);
   const catalog = useAppStore((state) => state.catalog);

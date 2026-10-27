@@ -39,8 +39,6 @@ export function LockScreen() {
   const [busy, setBusy] = useState(false);
   const [shake, setShake] = useState(0);
 
-  const reason = security?.lockoutUntil ? 'lockedOut' : null;
-
   /** Countdown for the lockout period, driven by the backend timestamp. */
   const remaining = useMemo(() => {
     if (!security?.lockoutUntil) return 0;

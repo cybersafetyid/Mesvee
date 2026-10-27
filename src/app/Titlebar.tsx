@@ -36,7 +36,6 @@ export interface TitlebarProps {
 export function Titlebar({ platform, onOpenPalette }: TitlebarProps) {
   const { t } = useTranslation();
   const settings = useAppStore((state) => state.settings);
-  const route = useAppStore((state) => state.route);
   const security = useAppStore((state) => state.security);
   const updateInfo = useAppStore((state) => state.updateInfo);
   const openSettings = useAppStore((state) => state.openSettings);
@@ -49,9 +48,6 @@ export function Titlebar({ platform, onOpenPalette }: TitlebarProps) {
   const [busy, setBusy] = useState(false);
 
   const isMac = platform === 'macos';
-  const activeService = settings?.services.find(
-    (service) => service.id === settings.activeServiceId,
-  );
   const focusMode = settings?.notifications.focusMode ?? false;
 
   /** Keeps the maximize glyph in sync when the OS resizes the window. */
